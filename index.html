@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Mingzhu Liu's World</title>
+
+  <meta name="description"
+    content="Portrait and fashion photography portfolio by Mingzhu Liu based in New York City." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Lightbox -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+  />
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+	  img{
+  max-width:100%;
+}
+    html{
+      scroll-behavior:smooth;
+    }
+
+   html,body{
+  width:100%;
+  overflow-x:hidden;
+}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:#0d0d0d;
+  color:white;
+}
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:999;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:24px 6%;
+      backdrop-filter:blur(16px);
+      background:rgba(0,0,0,0.35);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+    }
+
+    .logo{
+      font-size:20px;
+      font-weight:600;
+      letter-spacing:2px;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:32px;
+    }
+
+    .nav-links a{
+      font-size:14px;
+      letter-spacing:2px;
+      transition:.3s;
+    }
+
+    .nav-links a:hover{
+      opacity:.6;
+    }
+
+    /* HERO */
+	  .hero-content h1{
+  font-size:clamp(42px, 8vw, 72px);
+  font-weight:600;
+  letter-spacing:4px;
+  margin-bottom:18px;
+  line-height:1.1;
+  word-break:break-word;
+		  .hero{
+  width:100%;
+  min-height:100vh;
+  overflow:hidden;
+  position:relative;
+}
+}
+
+    .hero{
+      width:100%;
+      height:100vh;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:brightness(.65);
+    }
+
+    .hero-content{
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      text-align:center;
+      width:90%;
+    }
+
+    .hero-content h1{
+      font-size:72px;
+      font-weight:600;
+      letter-spacing:4px;
+      margin-bottom:18px;
+    }
+
+    .hero-content p{
+      font-size:18px;
+      letter-spacing:3px;
+      font-weight:300;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:120px 8%;
+    }
+
+    .section-title{
+      font-size:42px;
+      margin-bottom:60px;
+      font-weight:600;
+      letter-spacing:2px;
+    }
+
+    /* ABOUT */
+
+    .about{
+      max-width:900px;
+      margin:auto;
+      text-align:center;
+      line-height:2;
+      color:#d0d0d0;
+      font-size:17px;
+    }
+
+    /* GALLERY */
+
+    .gallery{
+      column-count:3;
+      column-gap:18px;
+    }
+
+    .gallery-item{
+      margin-bottom:18px;
+      position:relative;
+      overflow:hidden;
+      border-radius:18px;
+    }
+
+    .gallery img{
+      border-radius:18px;
+      transition:0.5s ease;
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+      opacity:.92;
+    }
+
+    /* CATEGORY BUTTONS */
+
+    .filters{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-bottom:50px;
+    }
+
+    .filters button{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.15);
+      color:white;
+      padding:12px 22px;
+      border-radius:999px;
+      cursor:pointer;
+      transition:.3s;
+      font-size:14px;
+      letter-spacing:1px;
+    }
+
+    .filters button:hover{
+      background:white;
+      color:black;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact h2{
+      font-size:38px;
+      margin-bottom:24px;
+    }
+
+    .contact p{
+      color:#cfcfcf;
+      margin-bottom:30px;
+      line-height:1.8;
+    }
+
+    .socials{
+      display:flex;
+      justify-content:center;
+      gap:24px;
+      margin-top:20px;
+    }
+
+    .socials a{
+      border:1px solid rgba(255,255,255,0.15);
+      padding:14px 26px;
+      border-radius:999px;
+      transition:.3s;
+    }
+
+    .socials a:hover{
+      background:white;
+      color:black;
+    }
+
+    /* FOOTER */
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#8a8a8a;
+      border-top:1px solid rgba(255,255,255,0.08);
+    }
+
+    /* SCROLL ANIMATION */
+
+    .fade-up{
+      opacity:0;
+      transform:translateY(40px);
+      transition:1s ease;
+    }
+
+    .fade-up.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      .gallery{
+        column-count:2;
+      }
+
+      .hero-content h1{
+        font-size:48px;
+      }
+
+    }
+
+    @media(max-width:768px){
+
+      nav{
+        flex-direction:column;
+        gap:18px;
+      }
+
+      .nav-links{
+        gap:18px;
+        flex-wrap:wrap;
+        justify-content:center;
+      }
+
+      .hero-content h1{
+        font-size:38px;
+      }
+
+      .hero-content p{
+        font-size:14px;
+      }
+
+      .gallery{
+        column-count:1;
+      }
+
+      .section-title{
+        font-size:32px;
+      }
+
+      .about{
+        font-size:15px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="logo">
+      MINGZHU LIU
+    </div>
+
+    <div class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#gallery">WORK</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero" id="home">
+
+    <img src="images/Banner-Mingzhu's world.jpg" alt="Banner">
+
+ 
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <h2 class="section-title fade-up">
+      ABOUT
+    </h2>
+
+    <div class="about fade-up">
+
+      <p>
+        I enjoy taking portraits and landscape photographs. Capturing beautiful moments, emotions, and interactions with others is something that brings me joy. I believe photography has a unique power-it allows us to preserve precious memories and freeze time. That's why I chose to include many portrait photos in my project. These portraits record different emotions, expressions, and moods of people at specific moments in their lives. Each one tells a story and reflects a certain feeling, whether it's joy, calmness, or thoughtfulness. The photos I selected make me feel a sense of beauty and warmth, and I hope they do the same for viewers.<p></p>
+			
+			<p>In addition to portraits, I also love photographing natural landscapes. Nature always inspires me with its beauty and grandeur. As part of my project, I chose to include mountain scenery. Standing on a mountain and seeing the vast view gives me a feeling of peace and wonder. The colors, the light, and the details in nature are constantly changing, and photography helps me capture those fleeting moments. Through this project, I wanted to share not only how I see the world, but also how I feel when I experience these moments—whether it's through people or through the natural world.
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+
+  <section id="gallery">
+
+    <h2 class="section-title fade-up">
+      SELECTED WORKS
+    </h2>
+
+    <!-- FILTERS -->
+
+    <div class="filters fade-up">
+
+      <button>Portrait</button>
+      <button>Fashion</button>
+      <button>Street</button>
+      <button>Studio</button>
+
+    </div>
+
+    <!-- MASONRY -->
+
+    <div class="gallery fade-up">
+
+      <div class="gallery-item">
+        <a href="images/Model1.jpg" class="glightbox">
+          <img src="images/Model1.jpg">
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Model2.jpg" class="glightbox">
+          <img src="images/Model2.jpg">
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Photo 375 Special Project- Mingzhu Liu/7R409609.jpg" class="glightbox">
+          <img src="images/Photo 375 Special Project- Mingzhu Liu/7R409609.jpg">
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Photo 375 Special Project- Mingzhu Liu/7R409684.jpg" class="glightbox">
+          <img src="images/Photo 375 Special Project- Mingzhu Liu/7R409684.jpg">
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Photo 375 Special Project- Mingzhu Liu/7R409493.jpg" class="glightbox">
+          <img src="images/Photo 375 Special Project- Mingzhu Liu/7R409493.jpg">
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="images/Photo 375 Special Project- Mingzhu Liu/7R403500.jpg" class="glightbox">
+          <img src="images/Photo 375 Special Project- Mingzhu Liu/7R403500.jpg">
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="contact fade-up">
+
+      <h2>
+        LET'S CREATE
+      </h2>
+
+      <p>
+        Available for portrait, fashion, editorial, and creative photography projects.
+      </p>
+
+      <div class="socials">
+
+        <a href="https://www.instagram.com/xingxin_stella" target="_blank">
+          Instagram
+        </a>
+
+        <a href="https://www.youtube.com/@jennyliu6604" target="_blank">
+          YouTube
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Mingzhu Liu Photography
+  </footer>
+
+  <!-- LIGHTBOX -->
+
+  <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+
+  <script>
+
+    // Lightbox
+
+    const lightbox = GLightbox({
+      touchNavigation:true,
+      loop:true
+    });
+
+    // Scroll Animation
+
+    const fadeElements = document.querySelectorAll('.fade-up');
+
+    const observer = new IntersectionObserver((entries)=>{
+
+      entries.forEach((entry)=>{
+
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+
+      });
+
+    });
+
+    fadeElements.forEach((el)=>{
+      observer.observe(el);
+    });
+
+  </script>
+
+</body>
+</html>
