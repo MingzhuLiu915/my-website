@@ -197,7 +197,7 @@ body{
       opacity:.92;
     }
 
-    /* CATEGORY BUTTONS */
+    /* PHOTOGRAPHY CATEGORIES */
 
     .filters{
       display:flex;
@@ -207,21 +207,14 @@ body{
       margin-bottom:50px;
     }
 
-    .filters button{
+    .filters span{
       background:transparent;
       border:1px solid rgba(255,255,255,0.15);
       color:white;
       padding:12px 22px;
       border-radius:999px;
-      cursor:pointer;
-      transition:.3s;
       font-size:14px;
       letter-spacing:1px;
-    }
-
-    .filters button:hover{
-      background:white;
-      color:black;
     }
 
     /* CONTACT */
@@ -357,7 +350,7 @@ body{
 
   <section class="hero" id="home">
 
-    <img src="images/Banner-Mingzhu's world.jpg" alt="Banner">
+    <img src="Banner-Mingzhu's World.jpg" alt="Banner">
 
  
 
@@ -395,10 +388,10 @@ body{
 
     <div class="filters fade-up">
 
-      <button>Portrait</button>
-      <button>Fashion</button>
-      <button>Street</button>
-      <button>Studio</button>
+      <span>Portrait</span>
+      <span>Fashion</span>
+      <span>Street</span>
+      <span>Studio</span>
 
     </div>
 
@@ -407,38 +400,32 @@ body{
     <div class="gallery fade-up">
 
       <div class="gallery-item">
-        <a href="images/Model1.jpg" class="glightbox">
-          <img src="images/Model1.jpg">
+        <a href="Model1.jpg" class="glightbox">
+          <img src="Model1.jpg">
         </a>
       </div>
 
       <div class="gallery-item">
-        <a href="images/Model2.jpg" class="glightbox">
-          <img src="images/Model2.jpg">
+        <a href="Model2.jpg" class="glightbox">
+          <img src="Model2.jpg">
         </a>
       </div>
 
       <div class="gallery-item">
-        <a href="images/Photo 375 Special Project- Mingzhu Liu/7R409609.jpg" class="glightbox">
-          <img src="images/Photo 375 Special Project- Mingzhu Liu/7R409609.jpg">
+        <a href="7R409609.jpg" class="glightbox">
+          <img src="7R409609.jpg">
         </a>
       </div>
 
       <div class="gallery-item">
-        <a href="images/Photo 375 Special Project- Mingzhu Liu/7R409684.jpg" class="glightbox">
-          <img src="images/Photo 375 Special Project- Mingzhu Liu/7R409684.jpg">
+        <a href="7R409684.jpg" class="glightbox">
+          <img src="7R409684.jpg">
         </a>
       </div>
 
       <div class="gallery-item">
-        <a href="images/Photo 375 Special Project- Mingzhu Liu/7R409493.jpg" class="glightbox">
-          <img src="images/Photo 375 Special Project- Mingzhu Liu/7R409493.jpg">
-        </a>
-      </div>
-
-      <div class="gallery-item">
-        <a href="images/Photo 375 Special Project- Mingzhu Liu/7R403500.jpg" class="glightbox">
-          <img src="images/Photo 375 Special Project- Mingzhu Liu/7R403500.jpg">
+        <a href="7R409493.jpg" class="glightbox">
+          <img src="7R409493.jpg">
         </a>
       </div>
 
@@ -490,10 +477,12 @@ body{
 
     // Lightbox
 
-    const lightbox = GLightbox({
-      touchNavigation:true,
-      loop:true
-    });
+    if (typeof GLightbox === "function") {
+      GLightbox({
+        touchNavigation:true,
+        loop:true
+      });
+    }
 
     // Scroll Animation
 
