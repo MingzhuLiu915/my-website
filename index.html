@@ -98,20 +98,6 @@ body{
     }
 
     /* HERO */
-	  .hero-content h1{
-  font-size:clamp(42px, 8vw, 72px);
-  font-weight:600;
-  letter-spacing:4px;
-  margin-bottom:18px;
-  line-height:1.1;
-  word-break:break-word;
-		  .hero{
-  width:100%;
-  min-height:100vh;
-  overflow:hidden;
-  position:relative;
-}
-}
 
     .hero{
       width:100%;
@@ -322,6 +308,156 @@ body{
         font-size:15px;
       }
 
+    }
+
+
+    /* Responsive layout */
+    html {
+      scroll-padding-top: 100px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      min-width: 0;
+    }
+
+    nav {
+      position: sticky;
+      background: rgba(13, 13, 13, .94);
+      gap: 20px;
+      padding: 16px max(5%, env(safe-area-inset-left));
+    }
+
+    .logo {
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      gap: clamp(12px, 3vw, 32px);
+    }
+
+    .nav-links a {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+    }
+
+    section {
+      padding: clamp(56px, 8vw, 120px) clamp(20px, 6vw, 96px);
+      max-width: 1600px;
+      margin-inline: auto;
+    }
+
+    .hero {
+      max-width: none;
+      height: auto;
+      min-height: 0;
+      padding: 0;
+      overflow: visible;
+    }
+
+    .hero img {
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+    }
+
+    .section-title {
+      font-size: clamp(26px, 4vw, 42px);
+      margin-bottom: clamp(28px, 5vw, 60px);
+      overflow-wrap: anywhere;
+    }
+
+    .about {
+      font-size: clamp(15px, 1.6vw, 17px);
+      line-height: 1.85;
+    }
+
+    .about p + p {
+      margin-top: 24px;
+    }
+
+    .gallery-item {
+      break-inside: avoid;
+      display: inline-block;
+      width: 100%;
+      vertical-align: top;
+    }
+
+    .gallery img {
+      height: auto;
+    }
+
+    .socials {
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .contact h2 {
+      font-size: clamp(28px, 4vw, 38px);
+    }
+
+    @media (max-width: 768px) {
+      html {
+        scroll-padding-top: 130px;
+      }
+
+      nav {
+        gap: 4px;
+        padding: 12px 16px 8px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: clamp(12px, 4vw, 24px);
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        font-size: 12px;
+        letter-spacing: 1px;
+      }
+
+      .filters {
+        gap: 8px;
+        margin-bottom: 28px;
+      }
+
+      .filters span {
+        padding: 10px 14px;
+        font-size: 12px;
+      }
+
+      .about {
+        text-align: left;
+      }
+
+      .gallery-item,
+      .gallery img {
+        border-radius: 12px;
+      }
+
+      footer {
+        padding: 28px 20px;
+        font-size: 13px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .fade-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
     }
 
   </style>
